@@ -15,7 +15,10 @@ public class FixedThreadPoolTest {
         }
     }
 
-    class Task implements Runnable {
+    // share with singleThreadExecutorDemo
+    // where this class should be enclosed
+    // so we use public static
+    public static class Task implements Runnable {
 
         @Override
         public void run() {
