@@ -44,7 +44,7 @@ public class Main {
         main.realMain();
     }
 
-    private void realMain() {
+    void realMain() {
         EventStorage eventStorage = new EventStorage();
         Producer producer = new Producer(eventStorage);
         Consumer consumer = new Consumer(eventStorage);
