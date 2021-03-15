@@ -7,7 +7,9 @@ import java.util.concurrent.Executors;
 
 public class ThreadLocalDemo1 {
     // 使用全局的静态变量，减少这个对象的重复生成和销毁，想得很美但会出现问题
-    // 因为s
+    // 因为 SimpleDateFormat线程不安全，
+    // dataFormat里面用到了calendar这个成员变量的setTime
+    // 并发访问会存在数据错误问题
     static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     public static String date(int seconds) {
         Date data = new Date(1000 * seconds);

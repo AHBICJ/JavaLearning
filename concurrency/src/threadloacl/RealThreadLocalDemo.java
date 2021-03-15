@@ -11,7 +11,7 @@ public class RealThreadLocalDemo {
     static class ThreadSafeFormatter {
         public static ThreadLocal<SimpleDateFormat> dateFormatThreadLocal
                 = ThreadLocal.withInitial(() -> {
-            System.out.println("Init Once");
+            System.out.println(Thread.currentThread().getName() + " Init Once");
             return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         });
     }
